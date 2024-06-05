@@ -1,0 +1,55 @@
+﻿H:\VisualStudio2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Raven Multiplayer.vcxproj, Raven.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  pch.cpp
+  entrypoint.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx10.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_dx9.cpp
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  Variables.cpp
+  Ioctl.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Ioctl.cpp(110,31): warning C4101: 'e': unreferenced local variable
+H:\BO2MultiplayerRaven\Raven\Raven\Ioctl.cpp(42,31): warning C4101: 'e': unreferenced local variable
+H:\BO2MultiplayerRaven\Raven\Raven\Ioctl.cpp(100,26): message : see reference to function template instantiation 'uint64_t call_hook<NULL_MEMORY*>(NULL_MEMORY *const )' being compiled
+  Aimbot.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(8,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Console.cpp
+  ESP.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(8,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+H:\BO2MultiplayerRaven\Raven\Raven\Menu\ESP.cpp(13,22): warning C4166: illegal calling convention for constructor/destructor
+H:\BO2MultiplayerRaven\Raven\Raven\Menu\ESP.cpp(74,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\BO2MultiplayerRaven\Raven\Raven\Menu\ESP.cpp(75,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+H:\BO2MultiplayerRaven\Raven\Raven\Menu\ESP.cpp(76,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Math.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(8,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Menu.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(8,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Offsets.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(8,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Vectors.cpp
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(8,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Compiling...
+  Radar.cpp
+  buffer.c
+  hde32.c
+  hde64.c
+  hook.c
+  trampoline.c
+  Generating code
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(43): warning C4172: returning address of local variable or temporary
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(39): warning C4172: returning address of local variable or temporary
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(47): warning C4172: returning address of local variable or temporary
+H:\BO2MultiplayerRaven\Raven\Raven\Ioctl.cpp(52): warning C4715: 'call_hook<_NULL_MEMORY *>': not all control paths return a value
+H:\BO2MultiplayerRaven\Raven\Raven\Include\Vectors.h(69): warning C4172: returning address of local variable or temporary
+  1744 of 1749 functions (99.7%) were compiled, the rest were copied from previous compilation.
+    42 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Raven.vcxproj -> H:\BO2MultiplayerRaven\Raven\Release\RavenMultiplayer.dll
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
