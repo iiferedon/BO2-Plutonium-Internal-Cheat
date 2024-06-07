@@ -50,16 +50,15 @@ using namespace Raven;
 	}
 
 	HRESULT APIENTRY MJPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags) {
+		static bool ImGui_Initialised = false;
+
 		if (!ImGui_Initialised) {
 			if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&DirectX11Interface::Device))) {
 				ImGui::CreateContext();
-
-				ImGuiIO& io = ImGui::GetIO(); (void)io;
-				ImGui::GetIO().WantCaptureMouse || ImGui::GetIO().WantTextInput || ImGui::GetIO().WantCaptureKeyboard;
+				ImGuiIO& io = ImGui::GetIO();
 				io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-				io.ConfigFlags = ImGuiConfigFlags_NoMouseCursorChange;
+				io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
-				//io.Fonts->AddFontFromFileTTF("C:\\Users\\EmotionEngine-8ynA.ttf", 16);
 				DirectX11Interface::Device->GetImmediateContext(&DirectX11Interface::DeviceContext);
 
 				DXGI_SWAP_CHAIN_DESC Desc;
@@ -79,29 +78,28 @@ using namespace Raven;
 				ImGui_Initialised = true;
 			}
 		}
+
+		
 		if (GetAsyncKeyState(VK_INSERT) & 1) g_ShowMainMenu = !g_ShowMainMenu;
+
 		
 		ImGui_ImplDX11_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
-		
 
+		
 		ImGui::GetIO().MouseDrawCursor = g_ShowMainMenu;
 
 		
-
-		//ImGuiIO& io = ImGui::GetIO();
-		//io.Fonts->AddFontDefault();
-		//ImGui::PushFont(espfont);
 		g_Menu->MainMenu();
 		g_Renderer->Esp();
-		
-		g_AimbotInstance->Aimbot();
-		//ImGui::PopFont();
-		ImGui::EndFrame();
+		//g_AimbotInstance->Aimbot();
 
+		
+		ImGui::EndFrame();
 		ImGui::Render();
 
+		
 		DirectX11Interface::DeviceContext->OMSetRenderTargets(1, &DirectX11Interface::RenderTargetView, NULL);
 		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 		return oIDXGISwapChainPresent(pSwapChain, SyncInterval, Flags);
@@ -183,15 +181,9 @@ using namespace Raven;
 		{
 			g_Console->printdbg("...\n", g_Console->color.pink);
 		}
-
-		g_Console->printdbg(" \n", g_Console->color.dark_yellow);
-		std::thread WCMUpdate(ClientBGThread);
+		
 		g_Console->printdbg("Cheat Enabled\n", g_Console->color.green);
 		g_Console->printdbg("#Press Insert to open\n", g_Console->color.green);
-		UINT_PTR address = 0x01066040;
-		int value = 4;
-		bool result = write_kernel_int(address, value);
-		WCMUpdate.join();
 		
 
 		return 0;
